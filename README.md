@@ -36,8 +36,6 @@ Template file -  The generated code can be inserted into a template, which conta
       -templatefile          name of template file to use
       -mult_spaces           allow multi-spaces by converting them to &nbsp;.
                              Default collapses sequential spaces to a single space
-      -sngl_line_pars_use_break  consecutive paragraphs separated by single line break are converted to a single par
-                             and <br> is inserted at the end of each line (currently disabled)
       -resolve_to_bq         resolve ambiguous paragraphs to <p class="bq"> (default: resolve to <p>)
       -allow_leading_spaces  allow leading spaces at beginning of paragraph (default no)
       -expand_tabs           expand tabs to n number of &nbsp;'s. If n = 0 or empty, treat tab as space
