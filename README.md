@@ -17,7 +17,7 @@ Its limitations are that it does not deal with tables and more complex RTF forma
 
 It is all handled by the rtf2html.pl script.  Just make the script executable, then type rtf2html with no args to get a detailed help page.  All the instructions are there.  Note that the sourcefile arg comes first.
 
-Template file -  The generated code can be inserted into a template, which contains the strings <!--ADD STYLES HERE--> and <!--ADD CONTENT HERE-->, in their appropriate locations for your needs.  ( It has been a while since I have tested using a template file, but it should probably work.)
+Template file -  The generated code can be inserted into a template, which contains the strings &lt;!--ADD STYLES HERE--&gt; and &lt;!--ADD CONTENT HERE--&gt;, in their appropriate locations for your needs.  ( It has been a while since I have tested using a template file, but it should probably work.)
 
 ### Usage:
 
