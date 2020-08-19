@@ -1,11 +1,13 @@
 # rtf2html
 RTF to HTML converter
 
-### A basic RTF to HTML converter written in Perl.
+### A basic RTF to HTML converter which spits out clean HTML
+
+(Written in Perl)
 
 This works for rich text RTF, but does not handle attachments.  However you can supply an RTFD file and it will deal with the text and just ignore the attachments.
 
-It was designed around RTF files generated from Apple products such as Bean or Pages.  Non-Apple products handle file generation with slight differences, so if there are any quirks when feeding it RTF files generated on non-Apple products, you can simply open the non-Apple file in Bean, make a change (seems to be necessary) then save, in order to "launder" the file to an Apple-generated file.
+It was designed around RTF files generated from Apple products such as Bean or Pages.  Non-Apple products handle file generation with slight differences, so if there are any quirks when feeding it RTF files generated on non-Apple products, you can simply open the non-Apple file in Bean, make a change then save, in order to "launder" the file to an Apple-generated file. (Making the change seems to be necessary.  You can just make a change, save, then undo and save again.)
 
 ### There are lots of other converters out there, why use this one?
 
@@ -13,11 +15,11 @@ RTF files record the history of every single change the user makes, even if subs
 
 The advantage to this script is that it endeavors with great pains to spit out very clean HTML, more like one would do if they were hand-coding.  Paragraphs are separated with P tags which are given appropriate classes for indent, text-align, etc. There are no font tags, and all inline styles eg font-size changes etc are done with span tags given appropriate classes.
 
-Its limitations are that it does not deal with tables and more complex RTF formatting.  It is great for things such as articles which are primarily text, and while not thoroughly tested, should be able to deal with lists to some degree.
+Its limitations are that it does not deal with tables and more complex RTF formatting.  It works very nicely for things such as articles which are primarily text, and while not thoroughly tested, should be able to deal with lists.
 
-It is all handled by the rtf2html.pl script.  Just make the script executable, then type rtf2html with no args to get a detailed help page.  All the instructions are there.  Note that the sourcefile arg comes first.
+It is all handled by the rtf2html.pl script.  Just make the script executable, then type `rtf2html.pl sourcefile.rtf`.  Many additional options are available to aid in desired code output.  Type `rtf2html` with no args to get a detailed help page.  All the instructions are there.  Note that the sourcefile arg comes before the options.
 
-Template file -  The generated code can be inserted into a template, which contains the strings &lt;!--ADD STYLES HERE--&gt; and &lt;!--ADD CONTENT HERE--&gt;, in their appropriate locations for your needs.  ( It has been a while since I have tested using a template file, but it should probably work.)
+Template file -  The generated code can be inserted into a template, which contains the strings &lt;!--ADD STYLES HERE--&gt; and &lt;!--ADD CONTENT HERE--&gt;, in their appropriate locations for your needs.  (It has been a while since I have tested using a template file, but it should probably work.)
 
 ### Usage:
 
