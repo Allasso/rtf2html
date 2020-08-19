@@ -21,6 +21,10 @@ It is all handled by the rtf2html.pl script.  Just make the script executable, t
 
 Template file -  The generated code can be inserted into a template, which contains the strings &lt;!--ADD STYLES HERE--&gt; and &lt;!--ADD CONTENT HERE--&gt;, in their appropriate locations for your needs.  (It has been a while since I have tested using a template file, but it should probably work.)
 
+Example:
+
+      rtf2html.pl sourcefile.rtf -no_smartquotes -text_align j -default_font_size 26 -default_font_family Verdana
+
 ### Usage:
 
       rtf2html.pl <sourcefile> <args>
@@ -41,7 +45,7 @@ Template file -  The generated code can be inserted into a template, which conta
       -expand_tabs           expand tabs to n number of &nbsp;'s. If n = 0 or empty, treat tab as space
       -default_color         color string in the form of r,g,b.  Leave empty for default, 0,0,0 (black)
       -default_font_size     font size value in half-points (as used by the RTF spec)
-      -default_font_family   font family in camel case format
+      -default_font_family   font family in camel case format (eg, Gill Sans => GillSans)
 
       Indents: (Indents are set as: css margin-left for RTF left-indent, css margin-right for RTF right-indent,
       and css  for RTF first-indent.)
@@ -57,8 +61,10 @@ Template file -  The generated code can be inserted into a template, which conta
 
                              Note, any value below the lowest threshold will default to 0 (no indent). Also,
                              threshold/fixed value pairs will apply to first-indent, left-indent, and right-indent.
-                             Default will be to use the values in the RTF.
-      -blockquote_factor      when set, if left-indent value is provided in the RTF for a paragraph, right-indent will
+                             Default will be to use the values in the RTF.  This feature is provided because some
+                             RTF docs can have indent values that vary (sometime slightly) all over the place.
+                             This provides the user the ability to clean these up and classify them.
+      -blockquote_factor     when set, if left-indent value is provided in the RTF for a paragraph, right-indent will
                              be set to a value proportional to left-indent. This behavior will occur even in the absence
                              -use_right_indent, and any right-indent supplied in the RTF will be overridden by this value.
                              If paragraph has no left-indent value, right-indent will be handled normally according to
